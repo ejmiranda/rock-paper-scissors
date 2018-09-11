@@ -1,0 +1,51 @@
+body {
+  background-color: #f5eee4;
+}
+
+.container, 
+#start-button {
+  color: #41301e;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 30px 0;
+}
+
+#start-button,
+.round-buttons {
+  margin: 50px 0;
+}
+
+#start-button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  width: auto;
+}
+
+button {
+  background-color: #fefefe;
+  height: auto;
+  margin: 0 10px;
+  padding: 10px;
+  width: 100px;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+img {
+  height: 80px;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 20px;
+}
