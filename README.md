@@ -1,5 +1,9 @@
 # Rock Paper Scissors
 
+![Rock Paper Scissors Screenshot](https://raw.githubusercontent.com/ejmiranda/rock-paper-scissors/master/meta/screenshot.png)
+
+[View Live](https://ejmiranda.github.io/rock-paper-scissors/)
+
 **Description:**
 - From The Odin Project's [Curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors).
 - Create a JS console version of a 5 round game of Rock Paper Scissors.
