@@ -18,28 +18,47 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <h1>Rock Paper Scissors</h1>
-      <button id="start-button">Start Game</button>
-      <div class="round-buttons">
-        <button id="rock">
-          <img 
-              src="media/rock.png" 
-              alt="Rock">
-        </button>
-        <button id="paper">
-          <img 
-              src="media/paper.png" 
-              alt="Paper">
-        </button>
-        <button id="scissors">
-          <img 
-              src="media/scissors.png" 
-              alt="Scissors">
-        </button>
+      <div id="stage">
+        
+        <div id="start-area" class="area">
+          <button id="start-btn" class="control">Start Game</button>
+        </div>
+        
+        <div id="round-area" class="area off">
+          <h2>Round #</h2>
+          <button id="rock-btn" class="game">
+            <img 
+                src="media/rock.png" 
+                alt="Rock">
+          </button>
+          <button id="paper-btn" class="game">
+            <img 
+                src="media/paper.png" 
+                alt="Paper">
+          </button>
+          <button id="scissors-btn" class="game">
+            <img 
+                src="media/scissors.png" 
+                alt="Scissors">
+          </button>
+          <p>Player: </p>
+          <p>Computer: </p>
+          <h2>Score</h2>
+        </div>
+
+        <div id="next-area" class="area off">
+          <button id="next-btn" class="control">Next Round</button>
+        </div>
+        
+        <div id="end-area" class="area off">
+          <h2>Final Score</h2>
+          <button class="control">Reset Game</button>
+        </div>
+        
       </div>
-      <p id="round-score">Round: </p>
-      <p id="game-score">Game: </p>
+    </div>
     </div>
   </body>
 </html>
