@@ -1,10 +1,125 @@
-function game() {
+const startArea = document.getElementById(`start-area`);
+const roundArea = document.getElementById(`round-area`);
+const nextArea = document.getElementById(`next-area`);
+const endArea = document.getElementById(`end-area`);
 
-  let score = [0, 0];
+const startBtn = document.getElementById(`start-btn`);
+const gameBtns = Array.from(document.querySelectorAll(`.game-btn`));
+const nextBtn = document.getElementById(`next-btn`);
 
-  for (i = 1; i <= 5; i++) {
-    console.log(`Round #${i}`);
-    let playerSelection = prompt(`Please Enter Your Selection`);
+const roundPara = document.getElementById(`round-para`);
+const selPara = document.getElementById(`sel-para`);
+const resultPara = document.getElementById(`result-para`);
+const scorePara = document.getElementById(`score-para`);
+
+let score = new Score(0, 0);
+let currentRound = 1;
+const rounds = 2;
+
+function Score(player, comp) {
+  this.player = player;
+  this.comp = comp;
+  this.clear = () => {
+    this.player = 0;
+    this.comp = 0;
+  }
+}
+
+startBtn.addEventListener('click', (event) => {
+  startArea.classList.add(`off`);
+  setNewGame();
+});
+
+function setNewGame() {
+  roundArea.classList.toggle(`off`);
+  score.clear();
+  roundPara.textContent += ` ${currentRound} of ${rounds}`;
+}
+
+gameBtns.forEach((gameBtn) => {
+  gameBtn.addEventListener(`click`, (event) => {
+    gameBtn.classList.toggle(`selected`);
+    disableInput();
+    let playerSel = gameBtn.id.charAt(0).toUpperCase() + gameBtn.id.slice(1).toLowerCase();;
+    let compSel = generateCompSel();
+    selPara.textContent = `Computer picked ${compSel}`;
+    resultPara.textContent = playRound(playerSel, compSel);
+    scorePara.textContent = `Player: ${score.player}, Computer: ${score.comp}`;
+    nextArea.classList.toggle(`off`);
+  })
+});
+
+function generateCompSel() {
+  const options = [
+    `Rock`, 
+    `Paper`, 
+    `Scissors`
+  ];
+  return randomValueFromArray(options);
+}
+
+function randomValueFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function disableInput() {
+  gameBtns.forEach((gameBtn) => {
+    gameBtn.disabled = true;
+    gameBtn.classList.toggle(`disabled`);
+  });
+}
+
+function toggleOnHover() {
+
+}
+
+function playRound(roundPlayerSel, roundCompSel) {
+  let result = ``;
+  if (roundPlayerSel === `Rock`) {
+    if (roundCompSel === `Rock`) {
+      result = `Draw!`
+    } else if (roundCompSel === `Paper`) {
+      result = `You Lose! ${roundCompSel} beats ${roundPlayerSel}!`;
+      score.comp++;
+    } else { //roundCompSel === `Scissors`
+      result = `You Win! ${roundPlayerSel} beats ${roundCompSel}!`;
+      score.player++;
+    }
+  } else if (roundPlayerSel === `Paper`) {
+    if (roundCompSel === `Rock`) {
+      result = `You Win! ${roundPlayerSel} beats ${roundCompSel}!`;
+      score.player++;
+    } else if (roundCompSel === `Paper`) {
+      result = `Draw!`
+    } else { //roundCompSel === `Scissors`
+      result = `You Lose! ${roundCompSel} beats ${roundPlayerSel}!`;
+      score.comp++;
+    }
+  } else { //roundPlayerSel === `Scissors`
+    if (roundCompSel === `Rock`) {
+      result = `You Lose! ${roundCompSel} beats ${roundPlayerSel}!`;
+      score.comp++;
+    } else if (roundCompSel === `Paper`) {
+      result = `You Win! ${roundPlayerSel} beats ${roundCompSel}!`;
+      score.player++;
+    } else { //roundCompSel === `Scissors`
+      result = `Draw!`
+    }
+  }
+  return result;
+}
+
+
+
+
+
+function playGame() {
+  
+  let rounds = 2;
+  for (i = 1; i <= rounds; i++) {
+    
+    
+    let playerSelection = `Please Enter Your Selection`;
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     if ((playerSelection === `Rock`) || (playerSelection === `Paper`) || (playerSelection === `Scissors`)) {
       let compSelection = computerPlay();
@@ -34,62 +149,4 @@ function calcFinalScore(score) {
   }
   console.log(`The Final Score is Player: ${score[0]} & Computer: ${score[1]}`)
 
-}
-
-function playRound(playerSelection, compSelection, score) {
-
-  let result = ``;
-
-  if (playerSelection === `Rock`) {
-    if (compSelection === `Rock`) {
-      result = `Draw!`
-    } else if (compSelection === `Paper`) {
-      result = `You Lose! ${compSelection} beats ${playerSelection}!`;
-      score[1]++;
-    } else { //compSelection === `Scissors`
-      result = `You Win! ${playerSelection} beats ${compSelection}!`;
-      score[0]++;
-    }
-  } else if (playerSelection === `Paper`) {
-    if (compSelection === `Rock`) {
-      result = `You Win! ${playerSelection} beats ${compSelection}!`;
-      score[0]++;
-    } else if (compSelection === `Paper`) {
-      result = `Draw!`
-    } else { //compSelection === `Scissors`
-      result = `You Lose! ${compSelection} beats ${playerSelection}!`;
-      score[1]++;
-    }
-  } else { //playerSelection === `Scissors`
-    if (compSelection === `Rock`) {
-      result = `You Lose! ${compSelection} beats ${playerSelection}!`;
-      score[1]++;
-    } else if (compSelection === `Paper`) {
-      result = `You Win! ${playerSelection} beats ${compSelection}!`;
-      score[0]++;
-    } else { //compSelection === `Scissors`
-      result = `Draw!`
-    }
-  }
-
-  return result;
-
-}
-
-function computerPlay() {
-
-  let compSelection = [
-    `Rock`, 
-    `Paper`, 
-    `Scissors`
-  ];
-  
-  return randomValueFromArray(compSelection);
-
-}
-
-function randomValueFromArray(array) {
-
-  return array[Math.floor(Math.random()*array.length)];
-  
 }
