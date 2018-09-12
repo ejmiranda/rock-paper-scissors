@@ -2,13 +2,13 @@ body {
   background-color: #f5eee4;
 }
 
-.container, 
-#start-button {
+#container,
+.control {
   color: #41301e;
   font-family: 'Gloria Hallelujah', cursive;
 }
 
-.container {
+#container {
   padding: 30px;
   text-align: center;
 }
@@ -18,18 +18,52 @@ h1 {
   margin: 30px 0;
 }
 
-#start-button,
-.round-buttons {
-  margin: 50px 0;
+.area {
+  margin: 0 auto;
+  width: 400px;
 }
 
-#start-button {
+#start-area {
+  /*DELETE BELOW*/
+  /*background-color: blue;*/
+}
+
+#round-area {
+  /*DELETE BELOW*/
+  /*background-color: red;*/
+}
+
+#next-area {
+  /*DELETE BELOW*/
+  /*background-color: green;*/ 
+}
+
+#end-area {
+  /*DELETE BELOW*/
+  /*background-color: yellow;*/
+}
+
+.off {
+  display: none;
+}
+
+.control {
   font-size: 1.5em;
   padding: 10px 20px;
   width: auto;
 }
 
-button {
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1)
+}
+
+h2 {
+  font-size: 1.5em;
+  padding: 20px 0;
+}
+
+.game {
   background-color: #fefefe;
   height: auto;
   margin: 0 10px;
@@ -37,15 +71,11 @@ button {
   width: 100px;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
 img {
   height: 80px;
 }
 
 p {
-  font-size: 1.5em;
-  margin: 20px;
+  font-size: 1.25em;
+  padding: 10px 0;
 }
