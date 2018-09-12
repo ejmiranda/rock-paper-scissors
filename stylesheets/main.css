@@ -93,3 +93,15 @@ p {
   padding: 10px 0;
   margin: 10px 0;
 }
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: red;
+}
+
+.draw {
+  color: orange;
+}
