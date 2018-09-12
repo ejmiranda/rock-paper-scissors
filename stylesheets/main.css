@@ -23,26 +23,6 @@ h1 {
   width: 400px;
 }
 
-#start-area {
-  /*DELETE BELOW*/
-  /*background-color: blue;*/
-}
-
-#round-area {
-  /*DELETE BELOW*/
-  /*background-color: red;*/
-}
-
-#next-area {
-  /*DELETE BELOW*/
-  /*background-color: green;*/ 
-}
-
-#end-area {
-  /*DELETE BELOW*/
-  /*background-color: yellow;*/
-}
-
 .off {
   display: none;
 }
