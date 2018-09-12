@@ -33,6 +33,10 @@ h1 {
   width: auto;
 }
 
+button {
+  box-shadow: none;
+}
+
 button:hover {
   cursor: pointer;
   transform: scale(1.1)
