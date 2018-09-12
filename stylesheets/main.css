@@ -59,11 +59,11 @@ button:hover {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.75em;
   padding: 20px 0;
 }
 
-.game {
+.game-btn {
   background-color: #fefefe;
   height: auto;
   margin: 0 10px;
@@ -71,11 +71,25 @@ h2 {
   width: 100px;
 }
 
+.selected {
+  border: 1px solid #fdc331;
+  box-shadow: 0 0 7px 2px #fdc331;
+}
+
+.disabled {
+  opacity: .5;
+}
+
 img {
   height: 80px;
+}
+
+#result-para {
+  font-size: 1.5em;
 }
 
 p {
   font-size: 1.25em;
   padding: 10px 0;
+  margin: 10px 0;
 }
