@@ -118,6 +118,7 @@ function playRound() {
 }
 
 function getFinalResult() {
+  endHeading.classList.remove(`draw`, `win`, `lose`);
   if (stats.pScore === stats.cScore) {
     endHeading.classList.add(`draw`);
     return `Game Over! It's a Draw!`;
