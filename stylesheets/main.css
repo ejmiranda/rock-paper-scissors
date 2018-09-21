@@ -33,6 +33,11 @@ h1 {
   width: auto;
 }
 
+button {
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
 button:hover {
   cursor: pointer;
   transform: scale(1.1)
