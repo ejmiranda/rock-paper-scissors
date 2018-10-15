@@ -11,4 +11,4 @@
 - Also, practice event listeners and toggling CSS classes with JS.
 - `let lesson = (readability > ninjaCode);`
 
-> **_"I am Jack's Smirking Revenge"_** - The Narrator
+> **_"I am Jack's Smirking Revenge."_** - The Narrator
